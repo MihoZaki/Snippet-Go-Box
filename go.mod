@@ -1,4 +1,4 @@
-module github.com/Zaki-Zak/Snippet-Go-Box
+module github.com/MihoZaki/Snippet-Go-Box
 
 go 1.23.4
 
