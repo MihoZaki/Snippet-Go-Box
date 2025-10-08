@@ -13,7 +13,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/Zaki-Zak/Snippet-Go-Box/internal/models"
+	"github.com/MihoZaki/Snippet-Go-Box/internal/models"
 	"github.com/alexedwards/scs/mysqlstore"
 	"github.com/alexedwards/scs/v2"
 	"github.com/go-playground/form/v4"

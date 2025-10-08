@@ -3,7 +3,7 @@ package models
 import (
 	"testing"
 
-	"github.com/Zaki-Zak/Snippet-Go-Box/internal/assert"
+	"github.com/MihoZaki/Snippet-Go-Box/internal/assert"
 )
 
 func TestUserModelExists(t *testing.T) {

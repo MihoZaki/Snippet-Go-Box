@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/Zaki-Zak/Snippet-Go-Box/internal/assert"
+	"github.com/MihoZaki/Snippet-Go-Box/internal/assert"
 )
 
 func TestSnippetView(t *testing.T) {

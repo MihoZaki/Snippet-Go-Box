@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/Zaki-Zak/Snippet-Go-Box/internal/models"
-	"github.com/Zaki-Zak/Snippet-Go-Box/internal/validator"
+	"github.com/MihoZaki/Snippet-Go-Box/internal/models"
+	"github.com/MihoZaki/Snippet-Go-Box/internal/validator"
 )
 
 type userSignupForm struct {

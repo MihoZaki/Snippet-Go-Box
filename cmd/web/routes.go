@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/Zaki-Zak/Snippet-Go-Box/ui"
+	"github.com/MihoZaki/Snippet-Go-Box/ui"
 	"github.com/justinas/alice"
 )
 

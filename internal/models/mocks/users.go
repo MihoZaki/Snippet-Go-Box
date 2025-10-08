@@ -1,6 +1,6 @@
 package mocks
 
-import "github.com/Zaki-Zak/Snippet-Go-Box/internal/models"
+import "github.com/MihoZaki/Snippet-Go-Box/internal/models"
 
 type UserModel struct{}
 

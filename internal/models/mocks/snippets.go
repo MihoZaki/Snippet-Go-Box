@@ -3,7 +3,7 @@ package mocks
 import (
 	"time"
 
-	"github.com/Zaki-Zak/Snippet-Go-Box/internal/models"
+	"github.com/MihoZaki/Snippet-Go-Box/internal/models"
 )
 
 var mockSnippet = models.Snippet{

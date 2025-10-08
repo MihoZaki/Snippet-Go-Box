@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/Zaki-Zak/Snippet-Go-Box/internal/models"
-	"github.com/Zaki-Zak/Snippet-Go-Box/ui"
+	"github.com/MihoZaki/Snippet-Go-Box/internal/models"
+	"github.com/MihoZaki/Snippet-Go-Box/ui"
 )
 
 type templateData struct {
