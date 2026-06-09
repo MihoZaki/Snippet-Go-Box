@@ -18,3 +18,7 @@
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Go,dotenv
 tls/
+
+# Glimpse
+GLIMPSE.md
+.glimpse
