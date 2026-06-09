@@ -79,17 +79,27 @@ func openDB(dsn string) (*sql.DB, error) {
 func getDefaultDSN() string {
 	dbUser := os.Getenv("DB_USER")
 	dbPassword := os.Getenv("DB_PASSWORD")
+	dbHost := os.Getenv("DB_HOST")
+	dbPort := os.Getenv("DB_PORT")
 	dbName := os.Getenv("DB_NAME")
 	dbParseTime := os.Getenv("DB_PARSE_TIME")
-	return fmt.Sprintf("%s:%s@/%s?parseTime=%s", dbUser, dbPassword, dbName, dbParseTime)
+
+	// Fallback to localhost for local development outside of Docker
+	if dbHost == "" {
+		dbHost = "127.0.0.1"
+	}
+	if dbPort == "" {
+		dbPort = "3306"
+	}
+
+	return fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=%s", dbUser, dbPassword, dbHost, dbPort, dbName, dbParseTime)
 }
 
 func main() {
 	// INFO: env variables and cli variables.
 	addr := flag.String("addr", ":4000", "HTTP nerwork address")
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found, relying on system environment variables")
 	}
 	dsn := flag.String("dsn", getDefaultDSN(), "MySQL data source name")
 

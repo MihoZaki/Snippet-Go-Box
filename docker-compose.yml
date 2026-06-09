@@ -1,0 +1,48 @@
+services:
+  # ==========================================
+  # MySQL Database Service
+  # ==========================================
+  db:
+    image: mysql:8.0
+    container_name: snippetbox-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+    ports:
+      - "3306:3306" # Expose to host machine (optional, but good for local DB GUI tools)
+    volumes:
+      - db_data:/var/lib/mysql
+      # Auto-run your setup.sql script on first startup!
+      - ./internal/models/testdata/setup.sql:/docker-entrypoint-initdb.d/setup.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ==========================================
+  # Go Application Service
+  # ==========================================
+  app:
+    build: .
+    container_name: snippetbox-app
+    restart: always
+    ports:
+      - "4000:4000"
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_PARSE_TIME: ${DB_PARSE_TIME}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+    volumes:
+      # Mount the TLS folder so the app can find the certificates
+      - ./tls:/app/tls:ro
+    depends_on:
+      db:
+        condition: service_healthy # Wait for MySQL to be fully ready before starting the app
+
+volumes:
+  db_data: # Persistent storage for the database
