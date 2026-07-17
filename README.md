@@ -1,4 +1,4 @@
-# 📦 Snippet-Go-Box
+# Snippet-Go-Box
 
 [![Go Version](https://img.shields.io/badge/Go-1.23+-00ADD8?style=for-the-badge&logo=go)](https://go.dev/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker)](https://www.docker.com/)
@@ -8,18 +8,18 @@ A secure, performant, and fully containerized web application for creating and s
 
 ---
 
-## ✨ Features
+## Features
 
-- 🚀 **Modern Go Architecture:** Utilizes Go 1.23+ `http.ServeMux` method routing and `embed.FS` for zero-dependency static asset serving.
-- 🔒 **Security First:** Implements `bcrypt` password hashing, `nosurf` CSRF protection, secure HTTP headers, and session token renewal.
-- 🐳 **Production-Ready Docker:** Multi-stage Dockerfile yielding a tiny, secure Alpine runtime image.
-- 🗄️ **Automated Database Setup:** Docker Compose configuration with health checks and automatic schema initialization.
-- 🧪 **Comprehensive Testing:** Includes integration tests with mock databases and isolated HTTP test servers.
-- 📝 **Structured Logging:** Native `log/slog` JSON logging for easy observability and debugging.
+- **Modern Go Architecture:** Utilizes Go 1.23+ `http.ServeMux` method routing and `embed.FS` for zero-dependency static asset serving.
+- **Security First:** Implements `bcrypt` password hashing, `nosurf` CSRF protection, secure HTTP headers, and session token renewal.
+- **Production-Ready Docker:** Multi-stage Dockerfile yielding a tiny, secure Alpine runtime image.
+- **Automated Database Setup:** Docker Compose configuration with health checks and automatic schema initialization.
+- **Comprehensive Testing:** Includes integration tests with mock databases and isolated HTTP test servers.
+- **Structured Logging:** Native `log/slog` JSON logging for easy observability and debugging.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Category | Technology |
 | :--- | :--- |
@@ -33,7 +33,7 @@ A secure, performant, and fully containerized web application for creating and s
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 The easiest way to run this project is using Docker Compose. This single command spins up the Go application, a MySQL database, and automatically initializes the database schema.
 
@@ -44,7 +44,7 @@ Ensure you have the following installed:
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/YourUsername/Snippet-Go-Box.git
+git clone https://github.com/MihoZaki/Snippet-Go-Box.git
 cd Snippet-Go-Box
 ```
 
@@ -60,22 +60,22 @@ Build and start the containers:
 ```bash
 docker compose up --build
 ```
-> 💡 **Pro Tip:** The Go application is configured to wait for the MySQL database to pass its health check before starting, preventing connection refused errors.
+> **Pro Tip:** The Go application is configured to wait for the MySQL database to pass its health check before starting, preventing connection refused errors.
 
 ### 5. Access the Application
 Open your browser and navigate to:
-👉 **[https://localhost:4000](https://localhost:4000)**
+ **[https://localhost:4000](https://localhost:4000)**
 
 *(Note: Your browser will show a "Your connection is not private" warning due to the self-signed certificate. This is expected. Click **Advanced** → **Proceed to localhost** to continue).*
 
-### 🔑 Default Test Credentials
+### Default Test Credentials
 Your database is pre-seeded with a test user:
 - **Email:** `alice@example.com`
 - **Password:** `pa$$word`
 
 ---
 
-## ⚙️ Environment Variables
+## Environment Variables
 
 The application is configured via environment variables, loaded from the `.env` file when using Docker Compose.
 
@@ -90,7 +90,7 @@ The application is configured via environment variables, loaded from the `.env` 
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```text
 ├── cmd/web/               # Application entry point, handlers, and middleware
@@ -107,7 +107,7 @@ The application is configured via environment variables, loaded from the `.env` 
 
 ---
 
-## 🧪 Testing
+## Testing
 
 To run the unit and integration tests:
 
@@ -124,6 +124,6 @@ go test -short ./...
 
 ---
 
-## 📄 License
+## License
 
 This project is open-source and available under the [MIT License](LICENSE).
